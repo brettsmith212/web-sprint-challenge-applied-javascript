@@ -1,5 +1,4 @@
 import axios from "axios";
-import { articles } from "../mocks/data";
 
 const Card = (article) => {
   // TASK 5
