@@ -50,7 +50,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes to the *main* branch.
+- [ ] Submit via Codegrade by committing and pushing any new changes to the _main_ branch.
 - [ ] Check Codegrade for automated feedback.
 - [ ] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
 - [ ] Any changes pushed after the deadline will not receive any feedback.
@@ -60,7 +60,21 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Demonstrate your understanding of this week's concepts by answering the following questions:
 
 1. What is the DOM?
+
+   The DOM is the Document Object Model and is the interface where you are able to interact with a webpage. The DOM creates a tree where you can use the elements of the tree to make changes and update the webpage.
+
 2. What is an event?
+
+   An event is when something happens to an HTML element. This can be a click, mouse scroll over, loading the page, etc. When an event happens we can use that to perform an action on the webpage.
+
 3. What is an event listener?
+
+   An event listener can be added to any DOM object (HTML element) and listen for an event to happen. When the event occurs, the event listener can then pass a function that contains an action to be taken.
+
 4. Why would we convert a NodeList into an Array?
+
+   A NodeList can only have the forEach() method performed on it. In order to use other methods such as map(), filter(), or reduce(), you must have an Array.
+
 5. What is a component?
+
+   A component is a reusable function that can create DOM objects and make changes to the DOM. A component returns HTML.
