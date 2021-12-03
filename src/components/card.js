@@ -1,3 +1,6 @@
+import axios from "axios";
+import { articles } from "../mocks/data";
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -40,6 +43,10 @@ const Card = (article) => {
   divImgContainer.appendChild(img);
   divAuthor.appendChild(spanAuthorName);
 
+  divCard.addEventListener("click", function () {
+    console.log("Article Headline: ", article.headline);
+  });
+
   return divCard;
 };
 
@@ -52,6 +59,25 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  const parent = document.querySelector(selector);
+
+  axios
+    .get("http://localhost:5000/api/articles")
+    .then((res) => {
+      console.log(res.data.articles);
+      let javascriptArr = Array.from(res.data.articles.javascript);
+      let bootstrapArr = Array.from(res.data.articles.bootstrap);
+      let techArr = Array.from(res.data.articles.technology);
+      let jqueryArr = Array.from(res.data.articles.jquery);
+      let nodeArr = Array.from(res.data.articles.node);
+
+      javascriptArr.forEach((article) => parent.append(Card(article)));
+      bootstrapArr.forEach((article) => parent.append(Card(article)));
+      techArr.forEach((article) => parent.append(Card(article)));
+      jqueryArr.forEach((article) => parent.append(Card(article)));
+      nodeArr.forEach((article) => parent.append(Card(article)));
+    })
+    .catch((err) => console.error(err));
 };
 
 export { Card, cardAppender };
