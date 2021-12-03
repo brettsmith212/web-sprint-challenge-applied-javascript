@@ -63,7 +63,6 @@ const cardAppender = (selector) => {
   axios
     .get("http://localhost:5000/api/articles")
     .then((res) => {
-      console.log(res.data.articles);
       let javascriptArr = Array.from(res.data.articles.javascript);
       let bootstrapArr = Array.from(res.data.articles.bootstrap);
       let techArr = Array.from(res.data.articles.technology);
